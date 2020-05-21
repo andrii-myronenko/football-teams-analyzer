@@ -1,0 +1,1 @@
+# football-teams-analyzer
