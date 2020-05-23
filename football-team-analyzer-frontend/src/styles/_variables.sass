@@ -1,0 +1,70 @@
+$font-family: 'Work Sans', sans-serif
+
+// colors
+$white: #fff
+$black: #000
+$green: #00c853
+$blue: #00adc7
+$red: #ff7272
+
+$primary: $blue
+$secondary: $green
+$error: $red
+
+$blueBg: #0092a8
+$greyBg: #f3f4f7
+$greyLightBg: #f7f8fa
+$greenSuccess: #83e363
+$orangeErrors: #ffcb72
+$blueProcessing: #72ccff
+$greyInactive: #ced1db
+
+$greyFont: #73738b
+$secondGreyFont: #555555
+$lightGreyFont: #a4a6aa
+$lightBlueFont: #e6f4f6
+
+//font sizes
+$mainFont: 14px
+$tableFont: 13px
+$menuFont: 15px
+$middleFont: 16px
+$titleFont: 20px
+$subTitle: 18px
+$largeTitle: 42px
+
+// size unit for retina sprites
+$size: 1px
+
+// mixins
+@mixin border-radius($radius) 
+  -webkit-border-radius: $radius 
+  -moz-border-radius: $radius 
+  -ms-border-radius: $radius 
+  border-radius: $radius 
+
+@mixin flex  
+  display: -webkit-box 
+  display: -moz-box 
+  display: -ms-flexbox 
+  display: -webkit-flex 
+  display: flex
+
+@mixin flex-flow-row  
+  -webkit-flex-flow: row wrap 
+  flex-flow: row wrap 
+ 
+
+@mixin flex-flow-row-nowrap  
+  -webkit-flex-flow: row 
+  flex-flow: row 
+
+@mixin flex-flow-column  
+  -webkit-flex-flow: column wrap 
+  flex-flow: column wrap
+
+@mixin transition($transition)  
+  -webkit-transition: $transition 
+  -moz-transition: $transition 
+  -o-transition: $transition
+  transition: $transition

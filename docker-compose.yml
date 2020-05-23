@@ -1,0 +1,78 @@
+version: '3.7'
+services:
+  config01:
+    image: mongo:4.0
+    command: mongod --port 27017 --configsvr --replSet configserver --noprealloc --smallfiles --oplogSize 16
+    volumes:
+      - ./scripts:/scripts
+      - ./data/config01:/data/db
+  config02:
+    image: mongo:4.0
+    command: mongod --port 27017 --configsvr --replSet configserver --noprealloc --smallfiles --oplogSize 16
+    volumes:
+      - ./scripts:/scripts
+      - ./data/config02:/data/db
+  config03:
+    image: mongo:4.0
+    command: mongod --port 27017 --configsvr --replSet configserver --noprealloc --smallfiles --oplogSize 16
+    volumes:
+      - ./scripts:/scripts
+      - ./data/config03:/data/db
+  shard01a:
+    image: mongo:4.0
+    command: mongod --port 27018 --shardsvr --replSet shard01 --noprealloc --smallfiles --oplogSize 16
+    volumes:
+      - ./scripts:/scripts
+      - ./data/shard01a:/data/db
+  shard01b:
+    image: mongo:4.0
+    command: mongod --port 27018 --shardsvr --replSet shard01 --noprealloc --smallfiles --oplogSize 16
+    volumes:
+      - ./scripts:/scripts
+      - ./data/shard01b:/data/db
+  shard02a:
+    image: mongo:4.0
+    command: mongod --port 27019 --shardsvr --replSet shard02 --noprealloc --smallfiles --oplogSize 16
+    volumes:
+      - ./scripts:/scripts
+      - ./data/shard02a:/data/db
+  shard02b:
+    image: mongo:4.0
+    command: mongod --port 27019 --shardsvr --replSet shard02 --noprealloc --smallfiles --oplogSize 16
+    volumes:
+      - ./scripts:/scripts
+      - ./data/shard02b:/data/db
+  shard03a:
+    image: mongo:4.0
+    command: mongod --port 27020 --shardsvr --replSet shard03 --noprealloc --smallfiles --oplogSize 16
+    volumes:
+      - ./scripts:/scripts
+      - ./data/shard03a:/data/db
+  shard03b:
+    image: mongo:4.0
+    command: mongod --port 27020 --shardsvr --replSet shard03 --noprealloc --smallfiles --oplogSize 16
+    volumes:
+      - ./scripts:/scripts
+      - ./data/shard03b:/data/db
+  router:
+    image: mongo:4.0
+    command: mongos --port 27017 --configdb configserver/config01:27017,config02:27017,config03:27017 --bind_ip_all
+    environment:
+      USER: user
+      PSW: psw
+      DB: mydb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./scripts:/scripts
+      - ./data/router:/data/db
+    depends_on:
+      - config01
+      - config02
+      - config03
+      - shard01a
+      - shard01b
+      - shard02a
+      - shard02b
+      - shard03a
+      - shard03b

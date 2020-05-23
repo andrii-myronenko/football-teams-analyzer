@@ -1,0 +1,66 @@
+{
+  "name": "db-course-work",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.8.3",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/lab": "4.0.0-alpha.39",
+    "axios": "^0.19.1",
+    "chart.js": "^2.9.3",
+    "clsx": "^1.0.4",
+    "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
+    "normalize.css": "^8.0.1",
+    "react": "^16.12.0",
+    "react-chartjs-2": "^2.9.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^6.1.2",
+    "redux-thunk": "^2.3.0",
+    "typescript": "3.6.4",
+    "uuid": "^3.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/jest": "24.0.19",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "12.11.1",
+    "@types/react": "16.9.7",
+    "@types/react-dom": "16.9.2",
+    "@types/react-redux": "^7.1.6",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/redux-actions": "^2.6.1",
+    "@types/redux-logger": "^3.0.7",
+    "@types/redux-promise": "^0.5.28",
+    "@types/uuid": "^3.4.6"
+  }
+}

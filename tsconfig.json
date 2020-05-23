@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+      "outDir": "./dist",
+      "baseUrl": ".",
+      "rootDirs": [
+          ".",
+          "common"
+      ],
+      "typeRoots": [
+          "common/ambient-declarations"
+      ],
+      "paths": {
+          "@routes/*":      [ "routes/*"       ],
+          "@models/*":      [ "models/*"       ],
+          "@modules/*":     [ "modules/*"      ],
+          "@graphql/*":     [ "graphql/*"      ],
+          "@app/*":         [ "./*"            ],
+          "@common/*":      [ "common/*"       ],
+          "@repositories":  [ "repositories/*" ]
+      },
+      "target":           "es2018", 
+      "lib":              ["esnext", "dom"],
+      "module":           "commonjs",
+      "moduleResolution": "node",
+      "sourceMap":      false,
+      "declaration":    false, 
+      "declarationMap": false, 
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata":  true,  
+      "strict":                           true,
+      "noUnusedLocals":                   true,
+      "noUnusedParameters":               false,
+      "noImplicitAny":                    false,
+      "noImplicitThis":                   true,
+      "noImplicitReturns":                true,
+      "noFallthroughCasesInSwitch":       true,
+      "noStrictGenericChecks":            false,
+      "strictFunctionTypes":              true,
+      "strictNullChecks":                 false,
+      "allowUnreachableCode":             false,
+      "forceConsistentCasingInFileNames": true,
+      "alwaysStrict": true,
+      "pretty":       true
+  },
+  "files": ["index.ts"],
+  "include": [
+      "**/*",
+      "common/**/*"
+  ],
+  "exclude": [
+      "node_modules/**/*", "build", "common/ambient-declarations/**/*"
+  ]
+}
