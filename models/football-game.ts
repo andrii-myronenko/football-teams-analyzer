@@ -67,7 +67,7 @@ export class FootballGame extends BaseEntity {
         return isDatabaseEmpty ? FootballGame.fillFromCsv() : false;
     }
 
-    public static async getTeamsTable() {
+    public static async getTeamsInformation() {
         const manager = getMongoManager(); 
         return await manager.aggregate(FootballGame, [
             {
@@ -87,7 +87,7 @@ export class FootballGame extends BaseEntity {
         ]).toArray();
     }
 
-    public static async getTeamPtsAndExpectedPts() {
+    public static async getTeamsPtsAndExpectedPts() {
         const manager = getMongoManager(); 
         return await manager.aggregate(FootballGame, [
             {
@@ -100,7 +100,7 @@ export class FootballGame extends BaseEntity {
         ]).toArray();
     }
 
-    public static async getPtsScoredPair() {
+    public static async getGamesPtsScoredPair() {
         const manager = getMongoManager(); 
         return await manager.aggregate(FootballGame, [
             {

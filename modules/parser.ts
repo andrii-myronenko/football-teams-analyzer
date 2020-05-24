@@ -1,6 +1,6 @@
 import fs from 'fs';
 import Papa, { ParseResult } from 'papaparse';
-import { FootballGame } from '../models/game';
+import { FootballGame } from '../models/football-game';
 import Joi from '@hapi/joi';
 
 const CSVHeaderMap = {

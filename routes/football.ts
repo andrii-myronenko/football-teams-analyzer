@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import { FootballGame } from "../models/game";
+import { FootballGame } from "../models/football-game";
 import { sampleCorrelation, linearRegression } from 'simple-statistics';
 import child_process from 'child_process'
 import path from 'path'
@@ -8,10 +8,10 @@ export const router = new Router({
   prefix: '/api/football'
 })
 .get('/teams', async (ctx) => {
-    ctx.body = await FootballGame.getTeamsTable();
+    ctx.body = await FootballGame.getTeamsInformation();
 })
 .get('/goalsPtsRegressionCorrelation', async (ctx) => {
-    const dbQueryResult = await FootballGame.getPtsScoredPair();
+    const dbQueryResult = await FootballGame.getGamesPtsScoredPair();
     const ptsScoredArrays = dbQueryResult.reduce((acc, value) => {
         acc.scored.push(value.scoredGoals);
         acc.pts.push(value.pts);
@@ -19,7 +19,7 @@ export const router = new Router({
         return acc;
     }, { pts: [], scored: [], pair: [] })
 
-    const correlation = sampleCorrelation(ptsScoredArrays.scored, ptsScoredArrays.pts);
+    const correlation = ptsScoredArrays.scored.length ? sampleCorrelation(ptsScoredArrays.scored, ptsScoredArrays.pts) : 0;
     const { m, b } = linearRegression(ptsScoredArrays.pair);
     ctx.body =  {
         regresion: { m, b },
@@ -70,4 +70,4 @@ export const router = new Router({
     const command = `mongorestore ${pathToRestore} `;
     child_process.exec(command);
     ctx.status = 200;
-});;
+});

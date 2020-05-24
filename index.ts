@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import Koa from 'koa';
-import { FootballGame } from "./models/game"
+import { FootballGame } from "./models/football-game"
 import bodyParser from "koa-bodyparser";
 import { config } from "./config";
 import { router as footballRouter } from "./routes/football";

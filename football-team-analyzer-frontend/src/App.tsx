@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import ThemeProvider from "@material-ui/styles/ThemeProvider";
-import theme from "./theme";
 import { useEffect } from "react";
 import axios from 'axios'
 import { Bar, Line } from "react-chartjs-2";
@@ -166,10 +164,4 @@ const App = () => {
   )
 };
 
-const AppProvider = () => (
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>
-);
-
-export default AppProvider;
+export default App;
