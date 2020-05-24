@@ -1,6 +1,6 @@
 # "Football teams analyzer"
 
-## [Link to documentation (Ukrainian)](https://drive.google.com/file/d/1gmtNhU9_1oQmzP5VynshUo-UtnRD613V/view?usp=sharing)
+## [Link to the documentation (Ukrainian)](https://drive.google.com/file/d/1gmtNhU9_1oQmzP5VynshUo-UtnRD613V/view?usp=sharing)
 
 ##### Project description
 
