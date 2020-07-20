@@ -28,7 +28,7 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "mongodb": "^3.2.3",
     "morgan": "^1.9.1",
     "papaparse": "^5.2.0",
